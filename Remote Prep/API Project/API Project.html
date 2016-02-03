@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Weather Web App</title>
+    <style>
+      body{
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        font-size: 2em;
+        text-shadow: 0 0 10px #000;
+        color: #fff;
+        background: #888;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+      section{
+        min-height: 100%;
+      }
+      h1{
+        font-size: 1.5em;
+        padding: 0 0.3em;
+        line-height: 1em;
+      }
+      p{
+        padding: 0 1em;
+      }
+      a{
+        color: #fff;
+      }
+      footer{
+        position: absolute;
+        bottom: 0;
+        font-size: 0.5em;
+      }
+      #temperature{
+        text-decoration: none;
+        border-bottom: 0.05em dotted white;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h1 id="city">Weather App</h1>
+      <p><a id ="temperature" href="#" onclick="switchUnits(); return false;" title="Click to switch between metric and imperial units"></a><span id="weather">by @Kati Long</span></p>
+    </section>
+    <footer>
+      <p>Powered by<a  href="https://api.nasa.gov/api.html#apod">NASA</a>. Created with assistance from <a href="https://twitter.com/fourtonfish">@fourtonfish</a>. <a id="image-source" href="#">Image source</a>.</p>
+    </footer>
+    <script>
+      var weatherData = {
+        city: document.querySelector("#city"),
+        weather: document.querySelector("#weather"),
+        temperature: document.querySelector("weather"),
+        temperatureValue: 0,
+        units: "ºC"
+      }
+    </script>
+  </body>
+</html>
