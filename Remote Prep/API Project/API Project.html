@@ -98,6 +98,18 @@
           weatherData.temperature.innerHTML = weatherTemperature + weatherData.units;
          }, false);
 
+        xhr.addEventListener("error", function(err){
+          alert("Could not complete the request");
+        }, false);
+
+        xhr.open("GET", "https://fourtonfish.com/tutorials/weather-web-app/getlocationandweather.php?owapikey=f0de8a5803a5d8de8baf0abfe38e27ad&units=metric", true);
+        xhr.send();
+       }
+       else {
+         alert("Unable to fetch the location and weather data.");
+       }           
+    };
+    
         // var wtr;
         // var getWeather = function () {
         //   var requestString = 'http://api.openweathermap.org/data/2.5/weather?lat=' 
@@ -118,18 +130,6 @@
         //   wtr.open('GET', requestString, true);
         //   wtr.send();
         // };
-
-        xhr.addEventListener("error", function(err){
-          alert("Could not complete the request");
-        }, false);
-
-        xhr.open("GET", "https://fourtonfish.com/tutorials/weather-web-app/getlocationandweather.php?owapikey=f0de8a5803a5d8de8baf0abfe38e27ad&units=metric", true);
-        xhr.send();
-       }
-       else {
-         alert("Unable to fetch the location and weather data.");
-       }           
-    };
     
      var loadBackground = function(lat, lon, weatherTag) {
        var script_element = document.createElement('script');
