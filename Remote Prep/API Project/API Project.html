@@ -58,7 +58,11 @@
         temperatureValue: 0,
         units: "ºC"
       };
-
+      
+      var roundTemperature = function (val) {
+        return Math.round(val);
+      };
+      
       function switchUnits() {
         if (weatherData.units == "°C") {
           weatherData.temperatureValue = roundTemperature(weatherData.temperatureValue * 9/5 + 32);
