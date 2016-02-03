@@ -98,6 +98,27 @@
           weatherData.temperature.innerHTML = weatherTemperature + weatherData.units;
          }, false);
 
+        // var wtr;
+        // var getWeather = function () {
+        //   var requestString = 'http://api.openweathermap.org/data/2.5/weather?lat=' 
+        //     + lat + '&lon=' + lon
+        //     + '&cluster=yes&format=json'
+        //     + '&APPID=f0de8a5803a5d8de8baf0abfe38e27ad';
+        //   wtr = new XMLHttpRequest();
+        //   wtr.onload = function() {
+        //     var results = JSON.parse(wtr.responseText);
+        //     var weatherSimpleDescription = response.weather[0].simple;
+        //     var weatherDescription = response.weather[0].description;
+        //     var weatherTemperature = roundTemperature(response.weather[0].temperature);
+        //     weatherData.temperatureValue = weatherTemperature;
+        //     loadBackground(position.latitude, position.longitude, weatherSimpleDescription);
+        //     weatherData.weather.innerHTML =  ', ' + weatherDescription;
+        //     weatherData.temperature.innerHTML = weatherTemperature + weatherData.units;
+        //   };
+        //   wtr.open('GET', requestString, true);
+        //   wtr.send();
+        // };
+
         xhr.addEventListener("error", function(err){
           alert("Could not complete the request");
         }, false);
