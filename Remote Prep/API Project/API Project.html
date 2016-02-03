@@ -63,7 +63,7 @@
         return Math.round(val);
       };
       
-      function switchUnits() {
+      var switchUnits = function() {
         if (weatherData.units == "°C") {
           weatherData.temperatureValue = roundTemperature(weatherData.temperatureValue * 9/5 + 32);
           weatherData.units = "°F";
@@ -110,13 +110,13 @@
        }           
     };
     
-     function loadBackground(lat, lon, weatherTag) {
+     var loadBackground = function(lat, lon, weatherTag) {
        var script_element = document.createElement('script');
        script_element.src = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=65dcd8f8d5ce10e493a93bfacd4b6935&lat=" + lat + "&lon=" + lon + "&accuracy=1&tags=" + weatherTag + "&sort=relevance&extras=url_l&format=json";
       document.getElementsByTagName('head')[0].appendChild(script_element);
      }
 
-     function jsonFlickrApi(data){
+     var jsonFlickrApi = function(data){
        if (data.photos.pages > 0){
        var photo = data.photos.photo[0];
        document.querySelector("body").style.backgroundImage = "url('" + photo.url_l + "')";
